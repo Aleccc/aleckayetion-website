@@ -1,29 +1,29 @@
 <div class="container">
 <div class="row vh-100 align-items-center justify-content-center p-3">
     <div *ngIf="isVisible">
-        <h1 class="text-center">
+        <h1 class="text-center mb-3">
             Services Offered
         </h1>
         <div class="card-deck">
-            <div class="card bg-primary text-tertiary shadow" [@LeftToRight]>
+            <div class="card bg-transparent border border-primary shadow" [@LeftToRight]>
                 <img src="../../assets/images//technology-1940695_1920.jpg" class="card-img-top" alt="Mobile Development Services Offered">
                 <div class="card-body">
                     <h5 class="card-title">Mobile Development</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">We provide end-to-end mobile application development services for both Android and iOS. </p>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-                </div>
+                </div> -->
             </div>
-            <div class="card bg-primary text-tertiary shadow" [@BottomToTop]>
+            <div class="card bg-transparent border border-primary shadow" [@RightToLeft]>
                 <img src="../../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="Website Development Services Offered">
                 <div class="card-body">
                     <h5 class="card-title">Website Development</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Improve your company's online presence with a clean and responsive website.</p>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

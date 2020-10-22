@@ -1,5 +1,5 @@
 <div #home class="container-fluid" style="background-image: linear-gradient(to top, #000, #056674); background-attachment: fixed;">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent sticky-top" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-bottom" id="navbar">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
     [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav" aria-label="Toggle navigation">
@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsed" [isAnimated]="true">
         <div class="navbar-nav">
-            <a [class]="activeNavLink=='home' ? 'nav-link active' : 'nav-link'" (click)="scroll(home)" type="button">Home</a>
+            <a [class]="activeNavLink=='home' ? 'nav-link text-secondary active' : 'nav-link text-secondary'" (click)="scroll(home)" type="button">AlecKayetion</a>
             <a [class]="activeNavLink=='services' ? 'nav-link active' : 'nav-link'" (click)="scroll(services)" type="button">Services</a>
             <a [class]="activeNavLink=='pricing' ? 'nav-link active' : 'nav-link'" (click)="scroll(pricing)" type="button">Pricing</a>
             <a [class]="activeNavLink=='contact' ? 'nav-link active' : 'nav-link'" (click)="scroll(contact)" type="button">Contact</a>
@@ -24,4 +24,7 @@
   <div #contact>
     <app-contact></app-contact>
   </div>
+  <p class="text-center">
+    Copyright © {{ now | date:'yyyy' }} AlecKayetion Inc. All rights reserved.
+  </p>
 </div>

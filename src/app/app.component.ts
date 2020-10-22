@@ -8,6 +8,7 @@ import { NavLink } from './enums/nav-link.enum';
 })
 export class AppComponent {
   title = 'aleckayetion';
+  now = new Date();
   activeNavLink: string = NavLink.Home.toString();
   isCollapsed = true;
 
