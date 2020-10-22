@@ -1,76 +1,14 @@
+<app-navbar [activeNavLink]='activeNavLink'></app-navbar>
 <div class="container-fluid">
-  <div class="row vh-100 align-items-center">
-    <div class="col text-center">
+  <div class="row vh-100 align-items-center" (mouseenter)="activeNavLink='home'">
+    <div class="col text-center" [@FadeIn]>
       <p class="h3 text-secondary">Optimum</p>
       <p class="h1 text-primary">AlecKayetion</p>
       <p>Giving you precise solutions at the lowest cost</p>
-      <img src="../assets/icons/chevron-double-down.svg" class="pt-5">
-    </div>
-  </div>
-  <div class="row vh-100 align-items-center p-3">
-    <div class="card-columns">
-      <div class="card bg-primary">
-        <img src="../assets/images/m-b-m-ZzOa5G8hSPI-unsplash.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <div class="card bg-primary p-3">
-        <blockquote class="blockquote mb-0 card-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">
-            <small class="text-muted">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-          </footer>
-        </blockquote>
-      </div>
-      <div class="card bg-primary">
-        <img src="../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card bg-secondary text-white text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-          <footer class="blockquote-footer text-white">
-            <small>
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-          </footer>
-        </blockquote>
-      </div>
-      <div class="card bg-primary text-center">
-        <h5 class="card-header">Card Header</h5>
-        <div class="card-body">
-          <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card bg-primary">
-        <img src="../assets/images/technology-1940695_1920.jpg" class="card-img-top" alt="...">
-      </div>
-      <div class="card bg-primary p-3 text-right">
-        <blockquote class="blockquote mb-0">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">
-            <small class="text-muted">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-          </footer>
-        </blockquote>
-      </div>
-      <div class="card bg-primary">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+      <div class="pt-5">
+        <img src="../assets/icons/chevron-double-down.svg" class="p-1 rounded-circle bg-primary">
       </div>
     </div>
   </div>
+  <app-services-offered (activeNavLink)='activeNavLink=$event'></app-services-offered>
 </div>

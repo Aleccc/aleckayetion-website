@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent sticky-top" id="navbar">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="navbar-nav">
+            <a [class]="activeNavLink=='home' ? 'nav-link active' : 'nav-link'" href="#">Home</a>
+            <a [class]="activeNavLink=='services' ? 'nav-link active' : 'nav-link'" href="#services">Services</a>
+            <a [class]="activeNavLink=='pricing' ? 'nav-link active' : 'nav-link'" href="#">Pricing</a>
+            <a [class]="activeNavLink=='contact' ? 'nav-link active' : 'nav-link'" href="#">Contact</a>
+        </div>
+    </div>
+  </nav>
