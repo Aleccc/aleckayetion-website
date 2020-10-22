@@ -15,11 +15,24 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.data = this.builder.group({
-      Name: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      Comment: new FormControl('', [Validators.required])
-    })
+    this.data = this.builder.group(
+      {
+        Name: new FormControl('', [Validators.required]),
+        Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+        Comment: new FormControl('', [Validators.required])
+      },
+      { updateOn: "blur" }
+    );
+  }
+
+  get Name(): any {
+    return this.data.get('Name');
+  }
+  get Email(): any {
+    return this.data.get('Email');
+  }
+  get Comment(): any {
+    return this.data.get('Comment');
   }
 
   onSubmit(FormData) {
