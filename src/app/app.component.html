@@ -1,14 +1,5 @@
 <app-navbar [activeNavLink]='activeNavLink'></app-navbar>
 <div class="container-fluid">
-  <div class="row vh-100 align-items-center" (mouseenter)="activeNavLink='home'">
-    <div class="col text-center" [@FadeIn]>
-      <p class="h3 text-secondary">Optimum</p>
-      <p class="h1 text-primary">AlecKayetion</p>
-      <p>Giving you precise solutions at the lowest cost</p>
-      <div class="pt-5">
-        <img src="../assets/icons/chevron-double-down.svg" class="p-1 rounded-circle bg-primary">
-      </div>
-    </div>
-  </div>
+  <app-home (activeNavLink)='activeNavLink=$event'></app-home>
   <app-services-offered (activeNavLink)='activeNavLink=$event'></app-services-offered>
 </div>
