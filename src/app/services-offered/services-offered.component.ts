@@ -1,6 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
-import { NavLink } from '../enums/nav-link.enum';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-services-offered',
@@ -35,7 +34,6 @@ import { NavLink } from '../enums/nav-link.enum';
 })
 export class ServicesOfferedComponent implements OnInit {
 
-  @Output() activeNavLink = new EventEmitter<string>();
   isVisible = false;
 
   constructor(
@@ -50,7 +48,6 @@ export class ServicesOfferedComponent implements OnInit {
     if(element.offsetParent !== null) {
       // element is visible
       this.isVisible = true;
-      this.activeNavLink.emit(NavLink.Services.toString());
     }
   }
 }

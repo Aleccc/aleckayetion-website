@@ -1,37 +1,31 @@
-<div class="row vh-100 align-items-center justify-content-center p-3" id="services">
-    <!-- <h1 class="text-center" *ngIf="isVisible" [@FadeIn]>
-        Services Offered
-    </h1> -->
-    <div class="card-deck" *ngIf="isVisible">
-        <div class="card bg-primary text-tertiary shadow" [@LeftToRight]>
-            <img src="../../assets/images//technology-1940695_1920.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mobile Development</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+<div class="container">
+<div class="row vh-100 align-items-center justify-content-center p-3">
+    <div *ngIf="isVisible">
+        <h1 class="text-center">
+            Services Offered
+        </h1>
+        <div class="card-deck">
+            <div class="card bg-primary text-tertiary shadow" [@LeftToRight]>
+                <img src="../../assets/images//technology-1940695_1920.jpg" class="card-img-top" alt="Mobile Development Services Offered">
+                <div class="card-body">
+                    <h5 class="card-title">Mobile Development</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
+                </div>
             </div>
-            <div class="card-footer">
-                <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-            </div>
-        </div>
-        <div class="card bg-primary text-tertiary shadow" [@BottomToTop]>
-            <img src="../../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Website Development</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-            </div>
-        </div>
-        <div class="card bg-primary text-tertiary shadow" [@RightToLeft]>
-            <img src="../../assets/images/m-b-m-ZzOa5G8hSPI-unsplash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Financial Analysis</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
+            <div class="card bg-primary text-tertiary shadow" [@BottomToTop]>
+                <img src="../../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="Website Development Services Offered">
+                <div class="card-body">
+                    <h5 class="card-title">Website Development</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>

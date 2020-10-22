@@ -6,24 +6,28 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServicesOfferedComponent } from './services-offered/services-offered.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HomeComponent } from './home/home.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { ContactComponent } from './contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicesOfferedComponent,
-    NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    PricingComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

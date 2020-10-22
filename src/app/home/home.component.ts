@@ -23,15 +23,9 @@ import { NavLink } from '../enums/nav-link.enum';
 })
 export class HomeComponent implements OnInit {
 
-  @Output() activeNavLink = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  setActiveLink(): void {
-    this.activeNavLink.emit(NavLink.Home.toString());
   }
 
 }
