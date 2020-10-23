@@ -20,7 +20,12 @@
                         <textarea [class]="Comment.invalid && Comment.touched ? 'form-control is-invalid': 'form-control'" formControlName="Comment" name="Comment">
                         </textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" [disabled]="!data.valid">Submit</button>
+                    <button type="submit" class="btn btn-primary d-flex align-items-center" [disabled]="!data.valid">
+                        <span *ngIf="sending" class="spinner-border spinner-border-sm mr-1" role="sending" aria-hidden="true"></span>
+                        <span *ngIf="sending" class="sr-only">Sending...</span>
+                        <span *ngIf="sentSuccess" class="mr-1 font-weight-bold">&#10003;</span>
+                        Submit
+                    </button>
                 </form>
             </div>
         <!-- </div> -->
