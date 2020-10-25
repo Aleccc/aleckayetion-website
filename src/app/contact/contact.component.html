@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row vh-100 align-items-center justify-content-center">
+    <div class="row vh-100 align-items-center justify-content-center mb-5">
         <!-- <div class="row"> -->
             <h1 class="text-center mb-5">Contact Us</h1>
         <!-- </div> -->
@@ -20,7 +20,7 @@
                         <textarea [class]="Comment.invalid && Comment.touched ? 'form-control is-invalid': 'form-control'" formControlName="Comment" name="Comment">
                         </textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary d-flex align-items-center" [disabled]="!data.valid">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center" [disabled]="!data.valid || sending">
                         <span *ngIf="sending" class="spinner-border spinner-border-sm mr-1" role="sending" aria-hidden="true"></span>
                         <span *ngIf="sending" class="sr-only">Sending...</span>
                         <span *ngIf="sentSuccess" class="mr-1 font-weight-bold">&#10003;</span>
