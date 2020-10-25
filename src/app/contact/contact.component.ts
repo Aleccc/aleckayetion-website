@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,8 @@ export class ContactComponent implements OnInit {
   sentSuccess = false;
 
   constructor(
-    private builder: FormBuilder
+    private builder: FormBuilder,
+    private service: ContactService
   ) { }
 
   ngOnInit(): void {
@@ -21,7 +23,7 @@ export class ContactComponent implements OnInit {
       {
         Name: new FormControl('', [Validators.required]),
         Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-        Comment: new FormControl('', [Validators.required])
+        Comment: new FormControl('')
       },
       // { updateOn: "blur" }
     );
@@ -38,15 +40,24 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(FormData) {
-    console.log(FormData);
-    // this.contact.PostMessage(FormData)
-    // .subscribe(response => {
-    // location.href = 'https://mailthis.to/confirm'
-    // console.log(response)
-    // }, error => {
-    // console.warn(error.responseText)
-    // console.log({ error })
-    // })
+    const data = {
+      'subject': 'Website: Contact Us submission',
+      'body': JSON.stringify(FormData)
+    }
+    this.sending = true;
+    this.sentSuccess = false;
+    this.service.send(data).subscribe(
+      data => {
+        this.sentSuccess = true;
+        this.data.reset();
+        this.sending = false;
+      },
+      error => {
+        // error
+        console.warn(error);
+        this.sending = false;
+      }
+    )
   }
 
 }
