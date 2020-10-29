@@ -22,11 +22,9 @@
     "@angular/router": "~10.1.4",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "bootstrap": "^4.5.0",
-    "classlist.js": "^1.1.20150312",
     "ngx-bootstrap": "^6.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "web-animations-js": "^2.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
