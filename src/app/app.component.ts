@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Component, HostBinding, HostListener, ViewChild } from '@angular/core';
 import { NavLink } from './enums/nav-link.enum';
 
 @Component({
@@ -11,6 +11,9 @@ export class AppComponent {
   now = new Date();
   activeNavLink: string = NavLink.Home.toString();
   isCollapsed = true;
+
+  @HostBinding('@.disabled')
+  public animationsDisabled = true;
 
   @ViewChild('home') home;
   @ViewChild('services') services;
