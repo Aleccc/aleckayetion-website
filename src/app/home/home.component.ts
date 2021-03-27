@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   animations: [
     trigger('FadeIn', [
       transition(':enter', [  
-        style({opacity: 0, offset: 1.0}),
+        style({ opacity: 0, transform: 'translateY(0)' }),
         animate('1.2s 600ms ease-in')
       ]),
     ]),

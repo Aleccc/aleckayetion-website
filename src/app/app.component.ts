@@ -13,7 +13,7 @@ export class AppComponent {
   isCollapsed = true;
 
   @HostBinding('@.disabled')
-  public animationsDisabled = true;
+  public animationsDisabled = false;
 
   @ViewChild('home') home;
   @ViewChild('services') services;
