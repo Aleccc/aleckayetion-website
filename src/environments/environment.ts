@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   headers: {
     Authorization: 'Token 9386499fa5551888af4e56ea396840c94ec6da2b'
-  }
+  },
+  recaptcha_site_key: '6LdNOJEaAAAAAKutWdTV49FctNVFWOKvmKDWc7ru',
 };
 // Authorization: 'Token 4de5c3f9dbecee530e5a17b32c1f74465be6c2a9'
 /*

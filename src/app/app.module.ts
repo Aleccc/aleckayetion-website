@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -29,9 +31,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaV3Module,
   ],
-  providers: [],
+  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha_site_key }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

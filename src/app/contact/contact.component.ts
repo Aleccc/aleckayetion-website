@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ContactService } from '../services/contact.service';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +16,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private builder: FormBuilder,
-    private service: ContactService
+    private contactService: ContactService,
+    private recaptchaV3Service: ReCaptchaV3Service,
   ) { }
 
   ngOnInit(): void {
@@ -46,7 +48,19 @@ export class ContactComponent implements OnInit {
     }
     this.sending = true;
     this.sentSuccess = false;
-    this.service.send(data).subscribe(
+    this.recaptchaV3Service.execute('contactUs')
+    .subscribe(
+      (token) => {
+        this.sendEmail(data);
+      },
+      (error) => {
+        // TODO: notify user of error
+      }
+    );
+  }
+
+  private sendEmail(data){
+    this.contactService.send(data).subscribe(
       data => {
         this.sentSuccess = true;
         this.data.reset();
