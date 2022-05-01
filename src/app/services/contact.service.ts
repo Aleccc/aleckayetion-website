@@ -16,6 +16,7 @@ export class ContactService {
 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/x-www-form-urlencoded');
+    headers = headers.set('Access-Control-Allow-Origin', '*');
 
     return this.http.post(url, {
       secret: environment.recaptcha_site_key,
