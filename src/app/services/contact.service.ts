@@ -22,7 +22,7 @@ export class ContactService {
       response: data,
     }, {
       headers: headers,
-      // responseType: 'json',
+      responseType: 'json',
     })
 
   }
