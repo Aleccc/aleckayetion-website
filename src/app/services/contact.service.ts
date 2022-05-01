@@ -11,6 +11,21 @@ export class ContactService {
     private http: HttpClient
   ) { }
 
+  verify_recaptcha(data){
+    const url = "https://www.google.com/recaptcha/api/siteverify";
+
+    let headers = new HttpHeaders(environment.headers);
+    headers = headers.set('Content-Type', 'application/json');
+
+    return this.http.post(url, {
+      secret: environment.recaptcha_site_key,
+      response: data,
+    }, {
+      headers: headers,
+      responseType: 'json',
+    })
+
+  }
   send(data){
     const url = "https://aleckayetion-api.herokuapp.com/mailer/send/";
 
