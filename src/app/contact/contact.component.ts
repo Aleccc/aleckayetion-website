@@ -62,8 +62,8 @@ export class ContactComponent implements OnInit {
   private sendEmail(data, token){
     this.contactService.verify_recaptcha(token).subscribe(
       r => {
-        console.warn(r);
-        if(r['success'].valueOf()){
+        console.warn(r['success']);
+        if(r['success']){
           this.contactService.send(data).subscribe(
             res => {
               this.sentSuccess = true;
