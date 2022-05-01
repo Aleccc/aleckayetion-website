@@ -51,7 +51,7 @@ export class ContactComponent implements OnInit {
     this.recaptchaV3Service.execute('contactUs')
     .subscribe(
       (token) => {
-        this.sendEmail(data);
+        this.sendEmail(data, token);
       },
       (error) => {
         // TODO: notify user of error
@@ -59,12 +59,23 @@ export class ContactComponent implements OnInit {
     );
   }
 
-  private sendEmail(data){
-    this.contactService.send(data).subscribe(
-      data => {
-        this.sentSuccess = true;
-        this.data.reset();
-        this.sending = false;
+  private sendEmail(data, token){
+    this.contactService.verify_recaptcha(token).subscribe(
+      r => {
+        if(r['success'].valueOf()){
+          this.contactService.send(data).subscribe(
+            res => {
+              this.sentSuccess = true;
+              this.data.reset();
+              this.sending = false;
+            },
+            error => {
+              // error
+              console.warn(error);
+              this.sending = false;
+            }
+          )
+        }
       },
       error => {
         // error
