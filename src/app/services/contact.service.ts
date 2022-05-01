@@ -14,8 +14,8 @@ export class ContactService {
   verify_recaptcha(data){
     const url = "https://www.google.com/recaptcha/api/siteverify";
 
-    let headers = new HttpHeaders(environment.headers);
-    headers = headers.set('Content-Type', 'application/json');
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post(url, {
       secret: environment.recaptcha_site_key,
