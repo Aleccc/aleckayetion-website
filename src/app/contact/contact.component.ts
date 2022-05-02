@@ -65,7 +65,7 @@ export class ContactComponent implements OnInit {
         const j = JSON.parse(r.toString());
         console.warn(j);
         console.warn(j.success);
-        if(j.success){
+        if(j.success && (parseFloat(j.score) > 0.5)){
           this.contactService.send(data).subscribe(
             res => {
               this.sentSuccess = true;
@@ -78,6 +78,9 @@ export class ContactComponent implements OnInit {
               this.sending = false;
             }
           )
+        }
+        else {
+          this.sending = false;
         }
       },
       error => {
