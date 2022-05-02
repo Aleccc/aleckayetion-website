@@ -63,8 +63,6 @@ export class ContactComponent implements OnInit {
     this.contactService.verify_recaptcha(token).subscribe(
       r => {
         const j = JSON.parse(r.toString());
-        console.warn(j);
-        console.warn(j.success);
         if(j.success && (parseFloat(j.score) > 0.5)){
           this.contactService.send(data).subscribe(
             res => {
@@ -74,7 +72,7 @@ export class ContactComponent implements OnInit {
             },
             error => {
               // error
-              console.warn(error);
+              // console.warn(error);
               this.sending = false;
             }
           )
