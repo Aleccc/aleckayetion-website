@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import { ContactService } from '../services/contact.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 
@@ -10,12 +10,12 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
 })
 export class ContactComponent implements OnInit {
 
-  data: FormGroup;
+  data: UntypedFormGroup;
   sending = false;
   sentSuccess = false;
 
   constructor(
-    private builder: FormBuilder,
+    private builder: UntypedFormBuilder,
     private contactService: ContactService,
     private recaptchaV3Service: ReCaptchaV3Service,
   ) { }
@@ -23,9 +23,9 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.data = this.builder.group(
       {
-        Name: new FormControl('', [Validators.required]),
-        Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-        Comment: new FormControl('')
+        Name: new UntypedFormControl('', [Validators.required]),
+        Email: new UntypedFormControl('', [Validators.compose([Validators.required, Validators.email])]),
+        Comment: new UntypedFormControl('')
       },
       // { updateOn: "blur" }
     );
