@@ -12,16 +12,16 @@ export class ContactService {
   ) { }
 
   verify_recaptcha(data){
-    const url = "https://www.google.com/recaptcha/api/siteverify";
+    const url = "https://aleckayetion-api.herokuapp.com/recaptcha/verify/";
 
-    // let headers = new HttpHeaders(environment.headers);
-    // headers = headers.set('Content-Type', 'application/json');
+    let headers = new HttpHeaders(environment.headers);
+    headers = headers.set('Content-Type', 'application/json');
 
     return this.http.post(url, {
       secret: environment.recaptcha_site_key,
       response: data,
     }, {
-      // headers: headers,
+      headers: headers,
       responseType: 'json',
     })
 
