@@ -12,7 +12,7 @@ export class ContactService {
   ) { }
 
   verify_recaptcha(data){
-    const url = "https://aleckayetion-api.herokuapp.com/recaptcha/verify/";
+    const url = environment.aleckayetion_api_url + "/recaptcha/verify/";
 
     let headers = new HttpHeaders(environment.headers);
     headers = headers.set('Content-Type', 'application/json');
@@ -27,7 +27,7 @@ export class ContactService {
 
   }
   send(data){
-    const url = "https://aleckayetion-api.herokuapp.com/mailer/send/";
+    const url = environment.aleckayetion_api_url + "/mailer/send/";
 
     let headers = new HttpHeaders(environment.headers);
     headers = headers.set('Content-Type', 'application/json');
