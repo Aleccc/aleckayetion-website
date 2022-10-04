@@ -1,33 +1,31 @@
 <div class="container">
     <div class="row vh-100 align-items-center justify-content-center mb-5">
-        <!-- <div class="row"> -->
+        <div class="col-md-3">
             <h1 class="text-center">Contact Us</h1>
-        <!-- </div> -->
-        <!-- <div class="row"> -->
-            <div class="col-md-6 offset-md-3">
-                <form [formGroup]="data" (ngSubmit)="onSubmit(data.value)">
-                    <div class="form-group">
-                        <label for="Email">Email</label>
-                        <input type="email" [class]="Email.invalid && Email.touched ? 'form-control is-invalid': 'form-control'" name="Email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="Email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" [class]="Name.invalid && Name.touched ? 'form-control is-invalid': 'form-control'" name="Fullname" placeholder="Full Name" formControlName="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="comment">Comment</label>
-                        <textarea [class]="Comment.invalid && Comment.touched ? 'form-control is-invalid': 'form-control'" formControlName="Comment" name="Comment">
-                        </textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary d-flex align-items-center" [disabled]="!data.valid || sending">
-                        <span *ngIf="sending" class="spinner-border spinner-border-sm mr-1" role="sending" aria-hidden="true"></span>
-                        <span *ngIf="sending" class="sr-only">Sending...</span>
-                        <span *ngIf="sentSuccess" class="mr-1 font-weight-bold">&#10003;</span>
-                        Submit
-                    </button>
-                </form>
-            </div>
-        <!-- </div> -->
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="data" (ngSubmit)="onSubmit(data.value)">
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" [class]="Email.invalid && Email.touched ? 'form-control is-invalid': 'form-control'" name="Email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="Email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" [class]="Name.invalid && Name.touched ? 'form-control is-invalid': 'form-control'" name="Fullname" placeholder="Full Name" formControlName="Name">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="comment">Comment</label>
+                    <textarea [class]="Comment.invalid && Comment.touched ? 'form-control is-invalid': 'form-control'" formControlName="Comment" name="Comment">
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-light-outline d-flex align-items-center" [disabled]="!data.valid || sending">
+                    <span *ngIf="sending" class="spinner-border spinner-border-sm mr-1" role="sending" aria-hidden="true"></span>
+                    <span *ngIf="sending" class="sr-only">Sending...</span>
+                    <span *ngIf="sentSuccess" class="mr-1 font-weight-bold">&#10003; Submitted</span>
+                    <span *ngIf="!sending && !sentSuccess">Submit</span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
