@@ -5,12 +5,11 @@
 export const environment = {
   production: false,
   headers: {
-    Authorization: 'Token cb211d42a47ad2bf1b2f86c0a26f6abcbabcee8f'
+    Authorization: process.env.NG_APP_TOKEN
   },
-  recaptcha_site_key: '6LdNOJEaAAAAAKutWdTV49FctNVFWOKvmKDWc7ru',
-  aleckayetion_api_url: 'https://aleckayetion-api.us.aldryn.io',
+  recaptcha_site_key: process.env.NG_APP_RECAPTCHA_SITE_KEY,
+  aleckayetion_api_url: process.env.NG_APP_API_URL,
 };
-// Authorization: 'Token 4de5c3f9dbecee530e5a17b32c1f74465be6c2a9'
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
