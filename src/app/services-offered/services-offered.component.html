@@ -1,31 +1,25 @@
-<div class="container">
-<div class="row align-items-center justify-content-center p-3">
-    <div *ngIf="isVisible">
-        <h1 class="text-center mb-3 pt-5">
-            Services Offered
-        </h1>
-        <div class="card-deck">
-            <div class="card bg-transparent border border-primary shadow" [@LeftToRight]>
-                <img src="../../assets/images//technology-1940695_1920.jpg" class="card-img-top" alt="Mobile Development Services Offered">
-                <div class="card-body">
-                    <h5 class="card-title">Mobile Development</h5>
-                    <p class="card-text">We provide end-to-end mobile application development services for both Android and iOS. </p>
-                </div>
-                <!-- <div class="card-footer">
-                    <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-                </div> -->
-            </div>
-            <div class="card bg-transparent border border-primary shadow" [@RightToLeft]>
-                <img src="../../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="Website Development Services Offered">
-                <div class="card-body">
-                    <h5 class="card-title">Website Development</h5>
-                    <p class="card-text">Improve your company's online presence with a clean and responsive website.</p>
-                </div>
-                <!-- <div class="card-footer">
-                    <button type="button" class="btn btn-secondary btn-block">Get Started Now</button>
-                </div> -->
+<div class="row align-items-center justify-content-center">
+    <h1 class="text-center mb-3 pt-5">
+        Services Offered
+    </h1>
+</div>
+<div *ngIf="isVisible" class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center p-3">
+    <div class="col d-flex justify-content-center justify-content-md-end">
+        <div class="card bg-transparent border border-primary shadow" style="width: 22rem;" [@LeftToRight]>
+            <img src="../../assets/images//technology-1940695_1920.jpg" class="card-img-top" alt="Mobile Development Services Offered">
+            <div class="card-body">
+                <h5 class="card-title">Mobile Development</h5>
+                <p class="card-text">We provide end-to-end mobile application development services for both Android and iOS. </p>
             </div>
         </div>
     </div>
-</div>
+    <div class="col d-flex justify-content-center justify-content-md-start">
+        <div class="card bg-transparent border border-primary shadow" style="width: 22rem;" [@RightToLeft]>
+            <img src="../../assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" class="card-img-top" alt="Website Development Services Offered">
+            <div class="card-body">
+                <h5 class="card-title">Website Development</h5>
+                <p class="card-text">Improve your company's online presence with a clean and responsive website.</p>
+            </div>
+        </div>
+    </div>
 </div>
