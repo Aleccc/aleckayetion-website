@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import { ContactService } from '../services/contact.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -42,10 +43,18 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(FormData) {
+    var body: string = '';
+    Object.entries(FormData).forEach(([key, value]) => {
+      body += `${key}: ${value}\n`;
+    })
     const data = {
       'subject': 'Website: Contact Us submission',
-      'body': JSON.stringify(FormData)
+      'body': body,
     }
+    if(environment.aleckayetion_api_to){
+      Object.assign(data, {'to': environment.aleckayetion_api_to});
+    }
+    console.log(data)
     this.sending = true;
     this.sentSuccess = false;
     this.recaptchaV3Service.execute('contactUs')

@@ -9,6 +9,7 @@ export const environment = {
   },
   recaptcha_site_key: process.env.NG_APP_RECAPTCHA_SITE_KEY,
   aleckayetion_api_url: process.env.NG_APP_API_URL,
+  aleckayetion_api_to: process.env.NG_APP_API_TO,
 };
 /*
  * For easier debugging in development mode, you can import the following file
